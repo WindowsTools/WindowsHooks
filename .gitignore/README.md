@@ -3,6 +3,6 @@ WindowsHook
 
 Windows Hook
 
-1、disenable taskmgr
+1、disable taskmgr
 <br/>
-2、disenable ctrl+alt+del
+2、disable ctrl+alt+del
