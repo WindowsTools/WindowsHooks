@@ -64,6 +64,8 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CWindowsHooksDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CWindowsHooksDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +154,25 @@ HCURSOR CWindowsHooksDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CWindowsHooksDlg::OnBnClickedButton1()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	BOOL bResult = Window10TaskbarTransparent();
+	if (bResult)
+		AfxMessageBox(_T("成功"));
+	else
+		AfxMessageBox(_T("失败"));
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton2()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	BOOL bResult = RestoreWindow10TaskbarTransparent();
+	if (bResult)
+		AfxMessageBox(_T("成功"));
+	else
+		AfxMessageBox(_T("失败"));
+}
