@@ -2,7 +2,9 @@
 
 Visual Studio 2015 is Required
 
-1、Disable Taskmgr
+## Function
+
+1、Windows 10 taskbar transparent/translucent
 
 2、Disable Ctrl+Alt+Del
 
