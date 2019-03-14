@@ -52,7 +52,7 @@ END_MESSAGE_MAP()
 CWindowsHooksDlg::CWindowsHooksDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_WINDOWSHOOKS_DIALOG, pParent)
 {
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_hIcon = AfxGetApp()->LoadIcon(IDI_LOGO);
 }
 
 void CWindowsHooksDlg::DoDataExchange(CDataExchange* pDX)

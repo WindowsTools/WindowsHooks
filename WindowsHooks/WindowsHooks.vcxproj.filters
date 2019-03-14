@@ -65,5 +65,11 @@
     <Image Include="res\WindowsHooks.ico">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\ZhaoJia\Desktop\logo.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

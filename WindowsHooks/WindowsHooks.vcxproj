@@ -206,6 +206,8 @@
     <None Include="res\WindowsHooks.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\ZhaoJia\Desktop\logo.ico" />
+    <Image Include="res\icon1.ico" />
     <Image Include="res\WindowsHooks.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
