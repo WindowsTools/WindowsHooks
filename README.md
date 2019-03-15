@@ -4,9 +4,9 @@ Visual Studio 2015 is Required
 
 ## Function
 
-1、Windows 10 taskbar transparent/translucent
+1、Make Windows 10 taskbar transparent/translucent
 
-2、Disable Ctrl+Alt+Del
+2、Make Windows 10 Desktop Invisible/Visible
 
 
 ## License
