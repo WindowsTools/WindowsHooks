@@ -24,3 +24,7 @@ BOOL SetWindowTransparent(HWND hWnd);
 BOOL Window10TaskbarTransparent();
 BOOL RestoreWindow10TaskbarTransparent();
 
+BOOL HideDesktop();
+BOOL ShowDesktop();
+BOOL SetDesktopStatus(BOOL bValue);
+

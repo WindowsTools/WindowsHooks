@@ -66,6 +66,8 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CWindowsHooksDlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CWindowsHooksDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CWindowsHooksDlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &CWindowsHooksDlg::OnBnClickedButton4)
 END_MESSAGE_MAP()
 
 
@@ -171,6 +173,29 @@ void CWindowsHooksDlg::OnBnClickedButton2()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	BOOL bResult = RestoreWindow10TaskbarTransparent();
+	if (bResult)
+		AfxMessageBox(_T("成功"));
+	else
+		AfxMessageBox(_T("失败"));
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton3()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	BOOL bResult = HideDesktop();
+	if (bResult)
+		AfxMessageBox(_T("成功"));
+	else
+		AfxMessageBox(_T("失败"));
+	
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton4()
+{
+	// TODO: 在此添加控件通知处理程序代码
+    BOOL bResult = 	ShowDesktop();
 	if (bResult)
 		AfxMessageBox(_T("成功"));
 	else

@@ -33,3 +33,44 @@ BOOL RestoreWindow10TaskbarTransparent()
 {
 	return FALSE;
 }
+
+BOOL ShowDesktop()
+{
+	return SetDesktopStatus(FALSE);
+}
+
+BOOL HideDesktop()
+{
+	return SetDesktopStatus(TRUE);
+}
+
+BOOL SetDesktopStatus(BOOL bValue)
+{
+	HWND hDestop = GetDesktopWindow();
+	HWND hWorkerW = NULL;
+	HWND hShellView = NULL;
+	HWND hTaskbar = FindWindowA("Shell_TrayWnd", NULL);	
+
+	do
+	{
+		hWorkerW = FindWindowEx(hDestop, hWorkerW, _T("WorkerW"), NULL);
+		hShellView = FindWindowEx(hWorkerW, NULL, L"SHELLDLL_DefView", NULL);
+	} while (hShellView == NULL && hWorkerW != NULL);
+
+	if (hShellView != NULL && hTaskbar != NULL)
+	{
+		int nStatus = 0;
+		if (bValue)
+		{
+			nStatus = SW_HIDE;
+		}
+		else
+		{
+			nStatus = SW_SHOW;
+		}			
+		ShowWindow(hTaskbar, nStatus);	
+		ShowWindow(hShellView, nStatus);
+		return TRUE;
+	}
+	return FALSE;
+}
