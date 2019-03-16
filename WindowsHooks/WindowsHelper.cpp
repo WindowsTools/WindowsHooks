@@ -46,31 +46,56 @@ BOOL HideDesktop()
 
 BOOL SetDesktopStatus(BOOL bValue)
 {
-	HWND hDestop = GetDesktopWindow();
+	HWND hDesktop = FindWindow(_T("Progman"), _T("Program Manager"));
+	HWND hDestopW = GetDesktopWindow();
 	HWND hWorkerW = NULL;
 	HWND hShellView = NULL;
+	HWND hSysListView = NULL;
 	HWND hTaskbar = FindWindowA("Shell_TrayWnd", NULL);	
 
-	do
+	int nStatus = 0;
+	
+	if (bValue)
 	{
-		hWorkerW = FindWindowEx(hDestop, hWorkerW, _T("WorkerW"), NULL);
-		hShellView = FindWindowEx(hWorkerW, NULL, L"SHELLDLL_DefView", NULL);
-	} while (hShellView == NULL && hWorkerW != NULL);
-
-	if (hShellView != NULL && hTaskbar != NULL)
-	{
-		int nStatus = 0;
-		if (bValue)
-		{
-			nStatus = SW_HIDE;
-		}
-		else
-		{
-			nStatus = SW_SHOW;
-		}			
-		ShowWindow(hTaskbar, nStatus);	
-		ShowWindow(hShellView, nStatus);
-		return TRUE;
+		nStatus = SW_HIDE;
 	}
+	else
+	{
+		nStatus = SW_SHOW;
+	}
+
+
+
+	if (hDesktop != NULL)
+	{
+		//有些暂时不用
+		//开始菜单暂未屏蔽
+		hShellView = FindWindowEx(hDesktop, NULL, L"SHELLDLL_DefView", NULL);
+		hSysListView = FindWindowEx(hShellView, NULL, L"SysListView32", L"FolderView");
+		if (hSysListView != NULL && hTaskbar != NULL)
+		{
+			//ShowWindow(hDesktop, nStatus);
+			ShowWindow(hTaskbar, nStatus);
+			ShowWindow(hShellView, nStatus);
+			//ShowWindow(hSysListView, nStatus);
+			return TRUE;
+		}				
+	}
+	else
+	{
+		do
+		{
+			hWorkerW = FindWindowEx(hDestopW, hWorkerW, _T("WorkerW"), NULL);
+			hShellView = FindWindowEx(hWorkerW, NULL, L"SHELLDLL_DefView", NULL);
+		} while (hShellView == NULL && hWorkerW != NULL);
+
+		if (hShellView != NULL && hTaskbar != NULL)
+		{
+			
+			ShowWindow(hTaskbar, nStatus);
+			ShowWindow(hShellView, nStatus);
+			return TRUE;
+		}
+	}	
 	return FALSE;
 }
