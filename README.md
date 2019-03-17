@@ -4,7 +4,9 @@ Visual Studio 2015 is Required
 
 **If you run this project in Visual Studio 2017,make sure you have install VC++ v140 toolset**
 
-![VC++ 140 Toolset](https://github.com/zhaotianff/WindowsHooks/tree/master/doc/vc140.png ''VC++ 140 Toolset'')
+<p align="center">
+ <img align="center" alt="VC++ 140 Toolset" src="https://github.com/zhaotianff/WindowsHooks/tree/master/doc/vc140.png" />
+</p>
 
 ## Function
 
