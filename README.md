@@ -14,6 +14,7 @@ Visual Studio 2015 is Required
 
 2、Make Windows 10 desktop invisible/visible
 
+3、Make Windows 10 startmenu invisible/visible
 
 ## License
 

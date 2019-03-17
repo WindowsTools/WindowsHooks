@@ -68,6 +68,8 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON2, &CWindowsHooksDlg::OnBnClickedButton2)
 	ON_BN_CLICKED(IDC_BUTTON3, &CWindowsHooksDlg::OnBnClickedButton3)
 	ON_BN_CLICKED(IDC_BUTTON4, &CWindowsHooksDlg::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON5, &CWindowsHooksDlg::OnBnClickedButton5)
+	ON_BN_CLICKED(IDC_BUTTON6, &CWindowsHooksDlg::OnBnClickedButton6)
 END_MESSAGE_MAP()
 
 
@@ -200,4 +202,18 @@ void CWindowsHooksDlg::OnBnClickedButton4()
 		AfxMessageBox(_T("成功"));
 	else
 		AfxMessageBox(_T("失败"));
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton5()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	HideStartMenu();
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton6()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	ShowStartMenu();
 }

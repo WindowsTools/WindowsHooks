@@ -99,3 +99,26 @@ BOOL SetDesktopStatus(BOOL bValue)
 	}	
 	return FALSE;
 }
+
+BOOL HideStartMenu()
+{	
+	return SetStartMenu(TRUE);
+}
+
+BOOL ShowStartMenu()
+{
+	return SetStartMenu(FALSE);
+}
+
+BOOL SetStartMenu(BOOL bValue)
+{
+	HWND hTaskBar = FindWindow(_T("Shell_TrayWnd"), NULL);
+	HWND hStartMenu = FindWindowEx(hTaskBar, NULL, _T("Start"), NULL);
+	int nStatus = bValue == TRUE ? SW_HIDE : SW_SHOW;
+	if (hStartMenu != NULL)
+	{
+		ShowWindow(hStartMenu, nStatus);
+		return TRUE;
+	}
+	return FALSE;
+}

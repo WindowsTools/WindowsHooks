@@ -38,3 +38,11 @@ public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfte
 [DllImport("user32.dll", EntryPoint = "SendMessageA")]
 public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
 ```
+* [ShowWindow](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-showwindow)
+*Sets the specified window's show state.*
+
+**P/Invoke**
+```
+[DllImport("user32.dll", EntryPoint = "ShowWindow")]
+public static extern int SendMessage(IntPtr hwnd, int nCmdShow);
+```

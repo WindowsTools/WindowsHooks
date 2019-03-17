@@ -27,4 +27,7 @@ BOOL RestoreWindow10TaskbarTransparent();
 BOOL HideDesktop();
 BOOL ShowDesktop();
 BOOL SetDesktopStatus(BOOL bValue);
+BOOL HideStartMenu();
+BOOL ShowStartMenu();
+BOOL SetStartMenu(BOOL bValue);
 
