@@ -2,7 +2,7 @@
 
 Visual Studio 2015 is Required
 
-**If you run this project in Visual Studio 2017,make sure you have install VC++ v140 toolset**
+**If you run this project in Visual Studio 2017,make sure you have installed VC++ v140 toolset**
 
 <p align="center">
  <img align="center" alt="VC++ 140 Toolset" src="https://github.com/zhaotianff/WindowsHooks/blob/master/doc/vc140.png" />
