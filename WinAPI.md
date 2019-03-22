@@ -46,3 +46,11 @@ public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lPar
 [DllImport("user32.dll", EntryPoint = "ShowWindow")]
 public static extern int SendMessage(IntPtr hwnd, int nCmdShow);
 ```
+* [GetUserName](https://docs.microsoft.com/zh-cn/windows/desktop/api/winbase/nf-winbase-getusernamea)
+*Retrieves the name of the user associated with the current thread.*
+
+*P/Invoke*
+```
+[DllImport("Advapi32.dll", EntryPoint = "GetUserName")]
+public static extern int GetUserName(StringBuilder lpBuffer, int pcbBuffer);
+```
