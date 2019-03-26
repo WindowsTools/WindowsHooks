@@ -5,7 +5,7 @@
 ACCENTPOLICY policy_Blur = { 3, 0, 0, 0 }; // ACCENT_ENABLE_BLURBEHIND=3, ACCENT_INVALID=4...
 WINCOMPATTRDATA data_Blur = { 19, &policy_Blur, sizeof(ACCENTPOLICY) }; // WCA_ACCENT_POLICY=19
 
-
+HHOOK mHook = nullptr;
 
 HWND taskbar = FindWindowA("Shell_TrayWnd", NULL);
 HWND secondtaskbar = FindWindowA("Shell_SecondaryTrayWnd", NULL);
@@ -97,6 +97,7 @@ BOOL SetDesktopStatus(BOOL bValue)
 			return TRUE;
 		}
 	}	
+
 	return FALSE;
 }
 
@@ -118,7 +119,40 @@ BOOL SetStartMenu(BOOL bValue)
 	if (hStartMenu != NULL)
 	{
 		ShowWindow(hStartMenu, nStatus);
+		//屏蔽开始菜单按键
+		if (nStatus == SW_HIDE)
+		{
+			mHook =  SetWindowsHookEx(WH_KEYBOARD_LL, MyHookProc, NULL, 0);
+		}
+		else
+		{
+			UnhookWindowsHookEx(mHook);
+		}
 		return TRUE;
 	}
 	return FALSE;
+}
+
+LRESULT WINAPI MyHookProc(int code, WPARAM wParam, LPARAM lParam)
+{
+	LPKBDLLHOOKSTRUCT hookStruct = (LPKBDLLHOOKSTRUCT)lParam;
+	if (code == HC_ACTION)
+	{
+		switch (wParam)
+		{
+		case WM_KEYDOWN:
+		case WM_SYSKEYDOWN:
+		case WM_KEYUP:
+		case WM_SYSKEYUP:
+			if (hookStruct->vkCode == VK_LWIN || hookStruct->vkCode == VK_RWIN || 
+				  (hookStruct->vkCode == VK_ESCAPE) && ((GetKeyState(VK_CONTROL) & 0x8000) != 0))
+			{
+				return 1;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	return LRESULT();
 }

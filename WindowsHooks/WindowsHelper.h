@@ -17,6 +17,8 @@ struct ACCENTPOLICY
 	int nAnimationId;
 };
 
+
+
 typedef BOOL(WINAPI*SetWindowCompositionAttribute)(HWND hWnd, WINCOMPATTRDATA* wData);
 
 //Source https://github.com/TranslucentTB/TranslucentTB
@@ -30,4 +32,5 @@ BOOL SetDesktopStatus(BOOL bValue);
 BOOL HideStartMenu();
 BOOL ShowStartMenu();
 BOOL SetStartMenu(BOOL bValue);
+LRESULT WINAPI MyHookProc(int code, WPARAM wParam, LPARAM lParam);
 
