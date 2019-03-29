@@ -54,3 +54,6 @@ public static extern int SendMessage(IntPtr hwnd, int nCmdShow);
 [DllImport("Advapi32.dll", EntryPoint = "GetUserName")]
 public static extern int GetUserName(StringBuilder lpBuffer, int pcbBuffer);
 ```
+
+* [ReleaseCapture](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-releasecapture)
+*Releases the mouse capture from a window in the current thread and restores normal mouse input processing. A window that has captured the mouse receives all mouse input, regardless of the position of the cursor, except when a mouse button is clicked while the cursor hot spot is in the window of another thread.*
