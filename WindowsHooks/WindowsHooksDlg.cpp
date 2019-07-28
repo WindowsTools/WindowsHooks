@@ -6,6 +6,7 @@
 #include "WindowsHooks.h"
 #include "WindowsHooksDlg.h"
 #include "afxdialogex.h"
+#include "ExecDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -70,6 +71,7 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON4, &CWindowsHooksDlg::OnBnClickedButton4)
 	ON_BN_CLICKED(IDC_BUTTON5, &CWindowsHooksDlg::OnBnClickedButton5)
 	ON_BN_CLICKED(IDC_BUTTON6, &CWindowsHooksDlg::OnBnClickedButton6)
+	ON_BN_CLICKED(IDC_BUTTON7, &CWindowsHooksDlg::OnBnClickedButton7)
 END_MESSAGE_MAP()
 
 
@@ -216,4 +218,15 @@ void CWindowsHooksDlg::OnBnClickedButton6()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	ShowStartMenu();
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton7()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	ExecDialog execDialog;
+	if (execDialog.DoModal() == IDOK)
+	{		
+		ExecuteProgram(CT2CA(execDialog.m_strProgrameName), SW_NORMAL);
+	}
 }

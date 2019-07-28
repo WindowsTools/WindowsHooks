@@ -156,3 +156,17 @@ LRESULT WINAPI MyHookProc(int code, WPARAM wParam, LPARAM lParam)
 	}
 	return LRESULT();
 }
+
+BOOL ExecuteProgram(LPCSTR strProgramName, UINT nCmdShow)
+{
+	UINT nRect = WinExec(strProgramName, nCmdShow);
+
+	if (nRect > 31)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}

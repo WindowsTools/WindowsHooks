@@ -181,6 +181,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExecDialog.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="WindowsHooksDlg.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ExecDialog.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -208,6 +210,7 @@
   <ItemGroup>
     <Image Include="C:\Users\ZhaoJia\Desktop\logo.ico" />
     <Image Include="res\icon1.ico" />
+    <Image Include="res\logo.ico" />
     <Image Include="res\WindowsHooks.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
