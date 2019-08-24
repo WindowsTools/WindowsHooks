@@ -36,6 +36,9 @@
     <ClInclude Include="WindowsHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ExecDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsHooks.cpp">
@@ -48,6 +51,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="WindowsHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExecDialog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +75,9 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="C:\Users\ZhaoJia\Desktop\logo.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\logo.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

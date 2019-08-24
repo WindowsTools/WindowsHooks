@@ -1,6 +1,9 @@
 #pragma once
 
 #include <windows.h>
+#include<wtsapi32.h>
+
+#pragma comment(lib,"Wtsapi32.lib")
 
 struct WINCOMPATTRDATA
 {
@@ -36,3 +39,5 @@ LRESULT WINAPI MyHookProc(int code, WPARAM wParam, LPARAM lParam);
 
 BOOL ExecuteProgram(LPCSTR strProgramName, UINT nCmdShow);
 
+DWORD GetActiveConsoleSessionID();
+BOOL QueryUserToken(ULONG SessionID, PHANDLE phToken);

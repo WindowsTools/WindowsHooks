@@ -170,3 +170,13 @@ BOOL ExecuteProgram(LPCSTR strProgramName, UINT nCmdShow)
 		return FALSE;
 	}
 }
+
+DWORD GetActiveConsoleSessionID()
+{
+	return WTSGetActiveConsoleSessionId();
+}
+
+BOOL QueryUserToken(ULONG SessionID,PHANDLE phToken)
+{
+	return WTSQueryUserToken(SessionID, phToken);
+}
