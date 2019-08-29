@@ -171,6 +171,12 @@ BOOL ExecuteProgram(LPCSTR strProgramName, UINT nCmdShow)
 	}
 }
 
+BOOL ExecuteCMDWithParamter(LPCWSTR param)
+{
+	ShellExecute(NULL, NULL, L"C:\\WINDOWS\\System32\\cmd.exe", L"", param, SW_SHOW);
+	return 0;
+}
+
 DWORD GetActiveConsoleSessionID()
 {
 	return WTSGetActiveConsoleSessionId();

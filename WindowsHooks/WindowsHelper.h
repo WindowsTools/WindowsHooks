@@ -38,6 +38,7 @@ BOOL SetStartMenu(BOOL bValue);
 LRESULT WINAPI MyHookProc(int code, WPARAM wParam, LPARAM lParam);
 
 BOOL ExecuteProgram(LPCSTR strProgramName, UINT nCmdShow);
+BOOL ExecuteCMDWithParamter(LPCWSTR param);
 
 DWORD GetActiveConsoleSessionID();
 BOOL QueryUserToken(ULONG SessionID, PHANDLE phToken);
