@@ -236,11 +236,18 @@ void CWindowsHooksDlg::OnBnClickedButton7()
 void CWindowsHooksDlg::OnBnClickedButton8()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	AfxMessageBox(L"请在3秒内选择要透明的窗口");
-	Sleep(3000);
-	HWND hwnd = ::GetFocus();
+	
+	HWND hwnd = FindWindowA("CabinetWClass", NULL);
 	SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) | WS_EX_LAYERED);
 	//https://docs.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes	
 	int alpha = 200;
 	::SetLayeredWindowAttributes(hwnd, RGB(0, 0, 0), alpha, LWA_ALPHA);
+
+	/*while (hwnd)
+	{
+		SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) | WS_EX_LAYERED);
+		::SetLayeredWindowAttributes(hwnd, RGB(0, 0, 0), 255, 2);
+
+		hwnd = ::GetWindow(hwnd, GW_HWNDNEXT);
+	}*/
 }
