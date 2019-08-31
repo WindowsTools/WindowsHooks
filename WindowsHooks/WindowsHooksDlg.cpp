@@ -239,6 +239,7 @@ void CWindowsHooksDlg::OnBnClickedButton8()
 	AfxMessageBox(L"请在3秒内选择要透明的窗口");
 	Sleep(3000);
 	HWND hwnd = ::GetFocus();
+	SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) | WS_EX_LAYERED);
 	//https://docs.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes	
 	int alpha = 200;
 	::SetLayeredWindowAttributes(hwnd, RGB(0, 0, 0), alpha, LWA_ALPHA);
