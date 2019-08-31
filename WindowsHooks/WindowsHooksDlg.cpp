@@ -72,6 +72,7 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON5, &CWindowsHooksDlg::OnBnClickedButton5)
 	ON_BN_CLICKED(IDC_BUTTON6, &CWindowsHooksDlg::OnBnClickedButton6)
 	ON_BN_CLICKED(IDC_BUTTON7, &CWindowsHooksDlg::OnBnClickedButton7)
+	ON_BN_CLICKED(IDC_BUTTON8, &CWindowsHooksDlg::OnBnClickedButton8)
 END_MESSAGE_MAP()
 
 
@@ -229,4 +230,16 @@ void CWindowsHooksDlg::OnBnClickedButton7()
 	{		
 		ExecuteProgram(CT2CA(execDialog.m_strProgrameName), SW_NORMAL);
 	}
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton8()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	AfxMessageBox(L"请在3秒内选择要透明的窗口");
+	Sleep(3000);
+	HWND hwnd = ::GetFocus();
+	//https://docs.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setlayeredwindowattributes	
+	int alpha = 200;
+	::SetLayeredWindowAttributes(hwnd, RGB(0, 0, 0), alpha, LWA_ALPHA);
 }
