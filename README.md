@@ -10,11 +10,15 @@ Visual Studio 2015 is Required
 
 ## Function
 
-1、Make Windows 10 taskbar transparent/translucent
+1. Make Windows 10 taskbar transparent/translucent
 
-2、Make Windows 10 desktop invisible/visible
+2. Make Windows 10 desktop invisible/visible
 
-3、Make Windows 10 startmenu invisible/visible
+3. Make Windows 10 startmenu invisible/visible
+
+4. Make Windows 10 explorer window transparent/translucent
+
+5. Execute programs
 
 ## License
 
