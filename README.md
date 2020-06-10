@@ -1,8 +1,28 @@
 # Windows-Hooks
 
-Visual Studio 2015 is Required
+<p align="center">
+	<img align="center" alt="logo" src="doc/logo.png"/>
+</p>
+<p align="center">
+<a href="https://github.com/zhaotianff/WindowsHooks/stargazers" target="_blank">
+ <img alt="GitHub stars" src="https://img.shields.io/github/stars/zhaotianff/WindowsHooks.svg" />
+</a>
+<a href="https://github.com/zhaotianff/WindowsHooks/releases" target="_blank">
+ <img alt="All releases" src="https://img.shields.io/github/downloads/zhaotianff/WindowsHooks/total.svg" />
+</a>
+<a href="https://github.com/zhaotianff/WindowsHooks/network/members" target="_blank">
+ <img alt="Github forks" src="https://img.shields.io/github/forks/zhaotianff/WindowsHooks.svg" />
+</a>
+<a href="https://github.com/zhaotianff/WindowsHooks/issues" target="_blank">
+ <img alt="All issues" src="https://img.shields.io/github/issues/zhaotianff/WindowsHooks.svg" />
+</a>
+</p>
 
-**If you run this project in Visual Studio 2017,make sure you have installed VC++ v140 toolset**
+Windows-Hooks is not a real hook program, but some fun things developed using VC++
+
+## Development environment
+
+> Visual Studio 2015 & VC++ v140 toolset is Required
 
 <p align="center">
  <img align="center" alt="VC++ 140 Toolset" src="https://github.com/zhaotianff/WindowsHooks/blob/master/doc/vc140.png" />
