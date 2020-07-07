@@ -189,7 +189,7 @@ BOOL QueryUserToken(ULONG SessionID,PHANDLE phToken)
 
 BOOL TerminateProgram(LPTSTR strProgramName)
 {
-	HWND hwnd = FindWindow(L"Notepad", NULL);
+	HWND hwnd = FindWindow(strProgramName, NULL);
 
 	if (hwnd == NULL)
 		return FALSE;

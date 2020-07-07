@@ -7,6 +7,7 @@
 #include "WindowsHooksDlg.h"
 #include "afxdialogex.h"
 #include "ExecDialog.h"
+#include "TerminateDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -257,10 +258,10 @@ void CWindowsHooksDlg::OnBnClickedButton8()
 void CWindowsHooksDlg::OnTerminateProgramClick()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	ExecDialog execDialog;
-	if (execDialog.DoModal() == IDOK)
+	TerminateDialog terminateDialog;
+	if (terminateDialog.DoModal() == IDOK)
 	{
-		BOOL bResult = TerminateProgram(execDialog.m_strProgrameName);
+		BOOL bResult = TerminateProgram((LPTSTR)(LPCTSTR)terminateDialog.m_strProcessName);
 
 		if (bResult)
 		{
