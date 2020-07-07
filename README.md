@@ -51,7 +51,7 @@ The code may not be neat, just for fun 😁
 </div>
 
 <div align="center">
-<img align="center" alt="hide desktop" src="doc/2.png">
+<img align="center" alt="Transparent explorer window" src="doc/2.png">
 <p align="center">Transparent explorer window</p>
 </div>
 
