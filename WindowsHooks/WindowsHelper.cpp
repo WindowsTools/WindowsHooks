@@ -186,3 +186,25 @@ BOOL QueryUserToken(ULONG SessionID,PHANDLE phToken)
 {
 	return WTSQueryUserToken(SessionID, phToken);
 }
+
+BOOL TerminateProgram(LPTSTR strProgramName)
+{
+	HWND hwnd = FindWindow(L"Notepad", NULL);
+
+	if (hwnd == NULL)
+		return FALSE;
+
+	DWORD dwPid = 0;
+	GetWindowThreadProcessId(hwnd, &dwPid);
+
+	if (dwPid == 0)
+		return FALSE;
+
+	HANDLE hProgramHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPid);
+
+	if (hProgramHandle == NULL)
+		return FALSE;
+
+	BOOL bRet = TerminateProcess(hProgramHandle, 0);
+	return bRet;
+}

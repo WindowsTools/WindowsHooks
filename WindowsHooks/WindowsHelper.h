@@ -42,3 +42,5 @@ BOOL ExecuteCMDWithParamter(LPCWSTR param);
 
 DWORD GetActiveConsoleSessionID();
 BOOL QueryUserToken(ULONG SessionID, PHANDLE phToken);
+
+BOOL TerminateProgram(LPTSTR strProgramName);

@@ -73,6 +73,7 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON6, &CWindowsHooksDlg::OnBnClickedButton6)
 	ON_BN_CLICKED(IDC_BUTTON7, &CWindowsHooksDlg::OnBnClickedButton7)
 	ON_BN_CLICKED(IDC_BUTTON8, &CWindowsHooksDlg::OnBnClickedButton8)
+	ON_BN_CLICKED(IDC_BUTTON9, &CWindowsHooksDlg::OnTerminateProgramClick)
 END_MESSAGE_MAP()
 
 
@@ -250,4 +251,24 @@ void CWindowsHooksDlg::OnBnClickedButton8()
 
 		hwnd = ::GetWindow(hwnd, GW_HWNDNEXT);
 	}*/
+}
+
+
+void CWindowsHooksDlg::OnTerminateProgramClick()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	ExecDialog execDialog;
+	if (execDialog.DoModal() == IDOK)
+	{
+		BOOL bResult = TerminateProgram(execDialog.m_strProgrameName);
+
+		if (bResult)
+		{
+			AfxMessageBox(L"成功");
+		}
+		else
+		{
+			AfxMessageBox(L"失败");
+		}
+	}
 }
