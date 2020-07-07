@@ -27,10 +27,10 @@ The code may not be neat, just for fun 😁
 > Visual Studio 2015 & VC++ v140 toolset is Required
 
 <p align="center">
- <img align="center" alt="VC++ 140 Toolset" src="https://github.com/zhaotianff/WindowsHooks/blob/master/doc/vc140.png" />
+ <img align="center" alt="VC++ 140 Toolset" src="doc/vc140.png" />
 </p>
 
-## Function
+## Function list
 
 1. Make Windows 10 taskbar transparent/translucent
 
@@ -41,6 +41,19 @@ The code may not be neat, just for fun 😁
 4. Make Windows 10 explorer window transparent/translucent
 
 5. Execute programs
+
+6. Terminate program
+
+## Screenshots
+<div align="center">
+<img align="center" alt="hide desktop" src="doc/1.png">
+<p align="center">Hide desktop</p>
+</div>
+
+<div align="center">
+<img align="center" alt="hide desktop" src="doc/2.png">
+<p align="center">Transparent explorer window</p>
+</div>
 
 ## License
 
