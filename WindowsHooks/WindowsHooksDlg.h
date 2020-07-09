@@ -41,4 +41,5 @@ public:
 	afx_msg void OnBnClickedButton7();
 	afx_msg void OnBnClickedButton8();
 	afx_msg void OnTerminateProgramClick();
+	afx_msg void OnBnClickedButton10();
 };

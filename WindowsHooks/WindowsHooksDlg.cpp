@@ -8,6 +8,7 @@
 #include "afxdialogex.h"
 #include "ExecDialog.h"
 #include "TerminateDialog.h"
+#include "ResourceOPDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -75,6 +76,7 @@ BEGIN_MESSAGE_MAP(CWindowsHooksDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON7, &CWindowsHooksDlg::OnBnClickedButton7)
 	ON_BN_CLICKED(IDC_BUTTON8, &CWindowsHooksDlg::OnBnClickedButton8)
 	ON_BN_CLICKED(IDC_BUTTON9, &CWindowsHooksDlg::OnTerminateProgramClick)
+	ON_BN_CLICKED(IDC_BUTTON10, &CWindowsHooksDlg::OnBnClickedButton10)
 END_MESSAGE_MAP()
 
 
@@ -272,4 +274,13 @@ void CWindowsHooksDlg::OnTerminateProgramClick()
 			AfxMessageBox(L"失败");
 		}
 	}
+}
+
+
+void CWindowsHooksDlg::OnBnClickedButton10()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	ResourceOPDialog resouceDialog;
+
+	resouceDialog.DoModal();
 }
