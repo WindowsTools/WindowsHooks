@@ -122,11 +122,16 @@ BOOL SetStartMenu(BOOL bValue)
 		//屏蔽开始菜单按键
 		if (nStatus == SW_HIDE)
 		{
+			//https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowshookexa
+			//get all id
 			mHook =  SetWindowsHookEx(WH_KEYBOARD_LL, MyHookProc, NULL, 0);
 		}
 		else
 		{
-			UnhookWindowsHookEx(mHook);
+			if (mHook)
+			{
+				UnhookWindowsHookEx(mHook);
+			}
 		}
 		return TRUE;
 	}
