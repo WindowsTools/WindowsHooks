@@ -213,3 +213,14 @@ BOOL TerminateProgram(LPTSTR strProgramName)
 	BOOL bRet = TerminateProcess(hProgramHandle, 0);
 	return bRet;
 }
+
+VOID CloseExplorerWindow()
+{
+	HWND hwnd = FindWindow(L"CabinetWClass", NULL);
+
+	while (hwnd)
+	{
+		SendMessage(hwnd, WM_CLOSE, NULL, NULL);
+		hwnd = FindWindow(L"CabinetWClass", NULL);
+	}
+}

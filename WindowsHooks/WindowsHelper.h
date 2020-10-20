@@ -44,3 +44,4 @@ DWORD GetActiveConsoleSessionID();
 BOOL QueryUserToken(ULONG SessionID, PHANDLE phToken);
 
 BOOL TerminateProgram(LPTSTR strProgramName);
+VOID CloseExplorerWindow();

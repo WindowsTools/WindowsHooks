@@ -39,6 +39,12 @@
     <ClInclude Include="ExecDialog.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceOPDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TerminateDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsHooks.cpp">
@@ -56,6 +62,12 @@
     <ClCompile Include="ExecDialog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceOPDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TerminateDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WindowsHooks.rc">
@@ -66,15 +78,13 @@
     <None Include="res\WindowsHooks.rc2">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\Hello World.docx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\WindowsHooks.ico">
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\icon1.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="C:\Users\ZhaoJia\Desktop\logo.ico">
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="res\logo.ico">

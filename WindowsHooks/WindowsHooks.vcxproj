@@ -209,6 +209,7 @@
     <ResourceCompile Include="WindowsHooks.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\Hello World.docx" />
     <None Include="res\WindowsHooks.rc2" />
   </ItemGroup>
   <ItemGroup>
